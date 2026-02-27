@@ -23,7 +23,7 @@ posts : list[dict] = [
     },
 ]
 
-@app.get("/", response_class = HTMLResponse)
+@app.get("/", response_class = HTMLResponse) # this is to specify that the response will be in HTML format
 def home():
     return f"<h1>{posts[0]['title']}</h1>"
 
