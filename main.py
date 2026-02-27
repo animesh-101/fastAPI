@@ -23,9 +23,12 @@ posts : list[dict] = [
     },
 ]
 
-@app.get("/", response_class = HTMLResponse) # this is to specify that the response will be in HTML format
+
+# We can add to routes to display the same content in the HTML format. 
+@app.get("/", response_class = HTMLResponse, include_in_schema=False) # this is to specify that the response will be in HTML format
+@app.get("/posts", response_class = HTMLResponse, include_in_schema=False) # this is to specify that the response will be in HTML format
 def home():
-    return f"<h1>{posts[0]['title']}</h1>"
+    return f"<h1>{posts[0]['title']} by {posts[0]['author']}</h1>"
 
 @app.get("/api/posts")
 def get_posts():
