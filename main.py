@@ -1,6 +1,4 @@
 # to run the server use command 'fastapi dev main.py'
-
-
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
